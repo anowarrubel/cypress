@@ -1,0 +1,24 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "projectId": "cdthsm",
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "baseUrl" : "https://www.changehealthcare.com/",
+  "env": {},
+  "experimentalSourceRewriting": true,
+  "experimentalGetCookiesSameSite": true,
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "cypress/reports/mocha",
+            "quite": true,
+            "overwrite": false,
+            "html": false,
+            "json": true
+        }
+    }
+}
+  
+  

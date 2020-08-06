@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-05T20:13:52.739Z",
+    "end": "2020-08-05T20:13:53.747Z",
+    "duration": 1008,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "21fd31e2-ae3f-47c3-ae1d-af18f76c80cf",
+      "title": "",
+      "fullFile": "cypress/integration/specs/api.spec.js",
+      "file": "cypress/integration/specs/api.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6996990f-a464-4661-ae3c-6c224bc334b4",
+          "title": "Verify Search Header API enabled",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Header Search api",
+              "fullTitle": "Verify Search Header API enabled Verify Header Search api",
+              "timedOut": null,
+              "duration": 819,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/content/changehealth/us/en/search.html/_jcr_content/root/main-par.html').then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.not.be[\"null\"];\n  expect(response.body).to.not.include('start up inprogress');\n  expect(response.body).to.not.have.property('start up inprogress'); //expect(response.body.data).to.have.length(24)\n});",
+              "err": {},
+              "uuid": "3e443937-74a4-4ff5-ae5d-97700aeb4933",
+              "parentUUID": "6996990f-a464-4661-ae3c-6c224bc334b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3e443937-74a4-4ff5-ae5d-97700aeb4933"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 819,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

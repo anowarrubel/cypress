@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 1,
+    "failures": 0,
+    "start": "2020-08-05T20:13:57.986Z",
+    "end": "2020-08-05T20:14:14.687Z",
+    "duration": 16701,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 25,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e8a882a4-13fd-4f8c-83fe-53f6ee52a6a5",
+      "title": "",
+      "fullFile": "cypress/integration/specs/breadcrumb_clickable.spec.js",
+      "file": "cypress/integration/specs/breadcrumb_clickable.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dab28627-bd78-4f27-9770-b73501d2d5bc",
+          "title": "Verify Breadcrumb is clickable",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Verify Breadcrumb is clickable Verify Page title",
+              "timedOut": null,
+              "duration": 7514,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');\ncy.url().should('contains', 'healthcare');",
+              "err": {},
+              "uuid": "39dbc8ca-8a48-4325-9dc5-13c9cdc0a11b",
+              "parentUUID": "dab28627-bd78-4f27-9770-b73501d2d5bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Breadcrumb on About Us page is clickable",
+              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on About Us page is clickable",
+              "timedOut": null,
+              "duration": 4157,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-link-type=\"about us\"]').first().click();\ncy.title().should('eq', 'About Change Healthcare | Company Overview | Change Healthcare');\ncy.url().should('contains', '/about');\ncy.contains('Home').click();\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');\ncy.url().should('contains', 'healthcare');",
+              "err": {},
+              "uuid": "d8ab97bd-8785-4dc6-9eea-2ac55104436f",
+              "parentUUID": "dab28627-bd78-4f27-9770-b73501d2d5bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Breadcrumb on Insighs page is clickable",
+              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on Insighs page is clickable",
+              "timedOut": null,
+              "duration": 4858,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-link-type=\"insights\"]').first().click();\ncy.title().should('eq', 'Healthcare Industry Insights | Healthcare IT Insights | Change Healthcare');\ncy.url().should('contains', '/insights'); //cy.contains('Home').click()\ncy.get('.cmp-breadcrumb__item-link > span').click('topLeft');\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');\ncy.url().should('contains', 'healthcare');",
+              "err": {},
+              "uuid": "c34dc791-7134-4c2c-9d24-36654dd86dd9",
+              "parentUUID": "dab28627-bd78-4f27-9770-b73501d2d5bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Breadcrumb on Insighs page is clickable",
+              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on Insighs page is clickable",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "df57c075-c38b-4030-9e48-8de099293a76",
+              "parentUUID": "dab28627-bd78-4f27-9770-b73501d2d5bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "39dbc8ca-8a48-4325-9dc5-13c9cdc0a11b",
+            "d8ab97bd-8785-4dc6-9eea-2ac55104436f",
+            "c34dc791-7134-4c2c-9d24-36654dd86dd9"
+          ],
+          "failures": [],
+          "pending": [
+            "df57c075-c38b-4030-9e48-8de099293a76"
+          ],
+          "skipped": [],
+          "duration": 16529,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

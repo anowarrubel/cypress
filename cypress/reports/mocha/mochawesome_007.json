@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-05T20:16:59.476Z",
+    "end": "2020-08-05T20:17:11.737Z",
+    "duration": 12261,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "caa12792-6697-4216-bcfa-ac84b35b75f7",
+      "title": "",
+      "fullFile": "cypress/integration/specs/search.spec.js",
+      "file": "cypress/integration/specs/search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5d157a1d-30f5-419a-95c7-bb8f31ae265a",
+          "title": "Verify Search feature on the Header",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Page title",
+              "fullTitle": "Verify Search feature on the Header Verify Page title",
+              "timedOut": null,
+              "duration": 5840,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.title().should('equal', 'Healthcare Technology & Business Solutions Company | Change Healthcare');",
+              "err": {},
+              "uuid": "04c5e9f4-fc7a-4989-b87c-ed6575d166cb",
+              "parentUUID": "5d157a1d-30f5-419a-95c7-bb8f31ae265a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select 2nd from search suggestions",
+              "fullTitle": "Verify Search feature on the Header Select 2nd from search suggestions",
+              "timedOut": null,
+              "duration": 2149,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.iframe().find('.CoveoSearchbox').type('Health').find('#magic-box-suggestion-1').click(); //.find('.coveo-search-button').click()",
+              "err": {},
+              "uuid": "ae1ee3ec-513b-4375-9d9b-d6306667b294",
+              "parentUUID": "5d157a1d-30f5-419a-95c7-bb8f31ae265a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search for \"Health",
+              "fullTitle": "Verify Search feature on the Header Search for \"Health",
+              "timedOut": null,
+              "duration": 4193,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.cmp-header__search-toggle').should('be.visible').click();\ncy.get('.coveo-header-iframe-container > iframe').then(function ($iframe) {\n  var $body = $iframe.contents().find('body');\n  cy.wrap($body).find('.CoveoSearchbox').type('Health').find('.coveo-search-button').click();\n});",
+              "err": {},
+              "uuid": "29d9b565-2656-45ee-b485-f5bc155599d4",
+              "parentUUID": "5d157a1d-30f5-419a-95c7-bb8f31ae265a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04c5e9f4-fc7a-4989-b87c-ed6575d166cb",
+            "ae1ee3ec-513b-4375-9d9b-d6306667b294",
+            "29d9b565-2656-45ee-b485-f5bc155599d4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12182,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-05T20:14:40.667Z",
+    "end": "2020-08-05T20:15:23.285Z",
+    "duration": 42618,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a206a4f-95b4-4338-8df5-58bd803f3c38",
+      "title": "",
+      "fullFile": "cypress/integration/specs/gated_asset.spec.js",
+      "file": "cypress/integration/specs/gated_asset.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83bedb41-de6f-4742-844e-aca5d39cfb38",
+          "title": "Verify Gated Asset page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Gated form being displayed",
+              "fullTitle": "Verify Gated Asset page Verify Gated form being displayed",
+              "timedOut": null,
+              "duration": 13269,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Watch Video').first().click();\ncy.url().should('contains', '/insights');\ncy.title().should('contains', 'Change Healthcare');\ncy.wait(5000);\ncy.get('.cmp-asset-embed__modal-inner-contents').should('be.visible');",
+              "err": {},
+              "uuid": "d30b041d-5f2d-4946-996d-8fa4c3def656",
+              "parentUUID": "83bedb41-de6f-4742-844e-aca5d39cfb38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Go Back link being displayed",
+              "fullTitle": "Verify Gated Asset page Verify Go Back link being displayed",
+              "timedOut": null,
+              "duration": 9220,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Watch Video').first().click();\ncy.url().should('contains', '/insights');\ncy.title().should('contains', 'Change Healthcare');\ncy.wait(5000);\ncy.get('.cmp-asset-embed__modal-inner-contents').should('be.visible').contains('Go Back >>').should('be.visible').click();\ncy.url().should('contains', '/insights');",
+              "err": {},
+              "uuid": "5ae01e68-0e7c-47b3-a9c1-a940abf948be",
+              "parentUUID": "83bedb41-de6f-4742-844e-aca5d39cfb38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Error message being displayed for required fields",
+              "fullTitle": "Verify Gated Asset page Verify Error message being displayed for required fields",
+              "timedOut": null,
+              "duration": 9054,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Watch Video').first().click();\ncy.url().should('contains', '/insights');\ncy.title().should('contains', 'Change Healthcare');\ncy.wait(5000);\ncy.get('.cmp-asset-embed__modal-inner-contents').should('be.visible').contains('Submit').click();\ncy.get('#field0-error').should('be.visible').should('have.text', 'This field is required.');\ncy.get('#field1-error').should('be.visible').should('have.text', 'This field is required.');\ncy.get('#field2-error').should('be.visible').should('have.text', 'This field is required.');\ncy.get('#field4-error').should('be.visible').should('have.text', 'This field is required.');\ncy.get('#field5-error').should('be.visible').should('have.text', 'This field is required.');\ncy.get('#field8-error').should('be.visible').should('have.text', 'This field is required.');",
+              "err": {},
+              "uuid": "05d0ab12-28c4-4334-8f56-44ef6080c379",
+              "parentUUID": "83bedb41-de6f-4742-844e-aca5d39cfb38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Gated asset being displayed on successful form Submission",
+              "fullTitle": "Verify Gated Asset page Verify Gated asset being displayed on successful form Submission",
+              "timedOut": null,
+              "duration": 10910,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Watch Video').first().click();\ncy.url().should('contains', '/insights');\ncy.title().should('contains', 'Change Healthcare');\ncy.wait(5000);\ncy.get('.cmp-asset-embed__modal-inner-contents').should('be.visible').contains(\"First Name\").type('Test');\ncy.get('#field1').type('Last Name');\ncy.get(\"[name='emailAddress']\").type('anowar.hossain@bounteous.com');\ncy.get(\"[name='company']\").type('Bounteous');\ncy.get(\"[name='organizationType1']\").select('Software Vendor');\ncy.get(\"[name='stateProv']\").select('IL');\ncy.get('.submit-button').click();\ncy.get('.cmp-article-header__title').should('be.visible');",
+              "err": {},
+              "uuid": "76736f42-7abd-433f-b015-88a5da52357f",
+              "parentUUID": "83bedb41-de6f-4742-844e-aca5d39cfb38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d30b041d-5f2d-4946-996d-8fa4c3def656",
+            "5ae01e68-0e7c-47b3-a9c1-a940abf948be",
+            "05d0ab12-28c4-4334-8f56-44ef6080c379",
+            "76736f42-7abd-433f-b015-88a5da52357f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 42453,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
