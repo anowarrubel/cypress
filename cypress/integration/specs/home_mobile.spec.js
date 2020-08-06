@@ -29,7 +29,8 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
   it('Verify Utility nav being displayed', () => {
     
     HomePage.mobileMenu().should('be.visible').click()
-    HomePage.utilityNav().children().contains('Support').should('be.visible').click()
+    HomePage.utilityNav().children().should('have.length',3)
+      .contains('Support').should('be.visible').click()
     cy.url().should('include','support')
     cy.contains('Helping you find the answers you need').should('be.visible')
   })
@@ -42,9 +43,15 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
 
   it('Verify main navigation menu being displayed', () =>{
     HomePage.mobileMenu().should('be.visible').click()
-    HomePage.mainNav().children().contains("About").click()
+    HomePage.mainNav().contains("About").click()
     cy.url().should('include','about')
 
+  })
+
+  it('Verify main navigation menu has Four menu links', () =>{
+    HomePage.mobileMenu().should('be.visible').click()
+    HomePage.mainNav().should('be.visible')
+    .should('have.length',4)
   })
 
   it('Verify search icon being displayed on the header', () =>{

@@ -14,7 +14,8 @@ class Home_Page{
         return cy.get('.fas.fa-globe-americas')
     }
     mainNav(){
-        return cy.get('.cmp-header__nav-list')
+        //return cy.get('.cmp-header__nav-list')
+        return cy.get('.cmp-header__nav-list-link')
     }
     searchIcon(){
         return cy.get('.cmp-header__search-toggle')

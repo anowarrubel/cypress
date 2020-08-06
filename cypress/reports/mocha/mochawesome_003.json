@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-08-05T20:14:22.612Z",
-    "end": "2020-08-05T20:14:34.264Z",
-    "duration": 11652,
+    "start": "2020-08-06T19:10:05.541Z",
+    "end": "2020-08-06T19:10:19.575Z",
+    "duration": 14034,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f42b8c93-7329-478a-97ad-b459783d303b",
+      "uuid": "1c27d780-9f3f-4fe9-bab2-8e0f7e4de9a5",
       "title": "",
       "fullFile": "cypress/integration/specs/enrollment.spec.js",
       "file": "cypress/integration/specs/enrollment.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "50761a73-eb32-44e8-8e6f-b79758f802fa",
+          "uuid": "533c18fa-4190-4eef-8127-47c63bd90677",
           "title": "Verify Enrollment form pages being loaded without redirect",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verify Medical Claims Enrollment forms Page",
               "fullTitle": "Verify Enrollment form pages being loaded without redirect Verify Medical Claims Enrollment forms Page",
               "timedOut": null,
-              "duration": 11609,
+              "duration": 13968,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit(\"https://support.changehealthcare.com/customer-resources/enrollment-services/medical-hospital-claims-enrollment-forms\"); // cy.url().should('contains','enrollment-services')\n// cy.get('[data-link-type=\"claims enrollment forms\"]').first().click()\n// cy.title().should('eq','Medical amp; Hospital Claims Enrollment Forms | Support')\n// cy.url().should('contains','enrollment-services')",
               "err": {},
-              "uuid": "a8e9cc5a-8e61-4918-afe5-08ba259fdcfa",
-              "parentUUID": "50761a73-eb32-44e8-8e6f-b79758f802fa",
+              "uuid": "3399e6f9-6048-4d58-bd01-74f094a513f4",
+              "parentUUID": "533c18fa-4190-4eef-8127-47c63bd90677",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a8e9cc5a-8e61-4918-afe5-08ba259fdcfa"
+            "3399e6f9-6048-4d58-bd01-74f094a513f4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11609,
+          "duration": 13968,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

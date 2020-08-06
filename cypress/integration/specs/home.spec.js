@@ -32,8 +32,13 @@ context('Verify Home page', () => {
      })
 
   it('Verify main navigation menu being displayed', () =>{
-    HomePage.mainNav().should('be.visible').click()
-    HomePage.mainNav().children().contains("Contact").click()
+    HomePage.mainNav().should('be.visible')
+    HomePage.mainNav().contains("Contact").click()
+  })
+
+  it('Verify main navigation menu has Four menu links', () =>{
+    HomePage.mainNav().should('be.visible')
+    .should('have.length',4)
   })
 
   it('Verify search icon being displayed on the header', () =>{

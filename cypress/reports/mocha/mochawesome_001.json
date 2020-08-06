@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-08-05T20:13:52.739Z",
-    "end": "2020-08-05T20:13:53.747Z",
-    "duration": 1008,
+    "start": "2020-08-06T19:09:36.229Z",
+    "end": "2020-08-06T19:09:37.074Z",
+    "duration": 845,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "21fd31e2-ae3f-47c3-ae1d-af18f76c80cf",
+      "uuid": "c4a74055-966a-4c1d-b9f3-3ed53570896f",
       "title": "",
       "fullFile": "cypress/integration/specs/api.spec.js",
       "file": "cypress/integration/specs/api.spec.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6996990f-a464-4661-ae3c-6c224bc334b4",
-          "title": "Verify Search Header API enabled",
+          "uuid": "75c72825-a593-4157-a976-838d47331db5",
+          "title": "Verify Search Header API is Enabled",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,9 +36,9 @@
           "tests": [
             {
               "title": "Verify Header Search api",
-              "fullTitle": "Verify Search Header API enabled Verify Header Search api",
+              "fullTitle": "Verify Search Header API is Enabled Verify Header Search api",
               "timedOut": null,
-              "duration": 819,
+              "duration": 647,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.request('/content/changehealth/us/en/search.html/_jcr_content/root/main-par.html').then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.not.be[\"null\"];\n  expect(response.body).to.not.include('start up inprogress');\n  expect(response.body).to.not.have.property('start up inprogress'); //expect(response.body.data).to.have.length(24)\n});",
               "err": {},
-              "uuid": "3e443937-74a4-4ff5-ae5d-97700aeb4933",
-              "parentUUID": "6996990f-a464-4661-ae3c-6c224bc334b4",
+              "uuid": "11cf2dd5-d70c-440c-bbdc-900b726ce00b",
+              "parentUUID": "75c72825-a593-4157-a976-838d47331db5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3e443937-74a4-4ff5-ae5d-97700aeb4933"
+            "11cf2dd5-d70c-440c-bbdc-900b726ce00b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 819,
+          "duration": 647,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
