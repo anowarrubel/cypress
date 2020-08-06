@@ -1,13 +1,13 @@
-#cypress test framework 
+# cypress test framework 
 This is a automation test framework buil with cypress. Details: https://www.cypress.io/
 
-##How to install Cypress using npm?
+## How to install Cypress using npm?
 1. Create a project folder
 2. cd /your/project/folder
 3. Run "npm init" and follow the screen prompt to create package.json 
 3. Run "npm install cypress --save-dev"
 
-##Optional: 
+## Optional: 
 
 Install Mocha 
 1. cd /your/project/folder
@@ -29,14 +29,14 @@ Install Mochawesome-report-generator
 1. cd /your/project/folder
 2. Run "npm install mochawesome-report-generator --save-dev"
 
-##How to Open Cypress?
+## How to Open Cypress?
 
 1. cd /your/project/folder 
 2. Run "./node_modules/.bin/cypress open"
 3. Or run "npx cypress open" (If you have npm >v5.2)
 
 
-##How to run tests?
+## How to run tests?
 1. cd to root folder
 2. To run a particular test, run "npx cypress run --spec 'cypress/integration/test_name.spec.js' "
 3. To run all tests in a folder, run "npx cypress run --spec 'cypress/integration/**.spec.js' "
