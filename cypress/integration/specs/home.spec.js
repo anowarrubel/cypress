@@ -11,10 +11,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 context('Verify Home page', () => {
   beforeEach(() => {
     cy.HomePage()
-    cy.fixture('example').then(function(data){
-      this.data=data
+    cy.fixture('example').then(function(datay){
+      this.data=datay
     })
-  
+
   })
  
   it('Verify Covid19 text', () => {
@@ -33,7 +33,8 @@ context('Verify Home page', () => {
 
   it('Verify main navigation menu being displayed', () =>{
     HomePage.mainNav().should('be.visible')
-    HomePage.mainNav().contains("Contact").click()
+    HomePage.mainNav().contains("Contact").should('be.visible').click()
+    cy.url().should('include', "/contact")
   })
 
   it('Verify main navigation menu has Four menu links', () =>{
@@ -43,7 +44,6 @@ context('Verify Home page', () => {
 
   it('Verify search icon being displayed on the header', () =>{
     HomePage.searchIcon().should('be.visible').click()
-    HomePage.mobileSearchField().type('Health')
   })
 
 
