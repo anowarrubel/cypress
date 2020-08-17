@@ -13,6 +13,7 @@ context('Verify Gated Asset page', () => {
 
   beforeEach(() => {
     cy.HomePage()
+    cy.AcceptCookie()
     cy.contains('Insights').click()
     cy.title().should('eq','Healthcare Industry Insights | Healthcare IT Insights | Change Healthcare')
     cy.url().should('contains','/insights')
@@ -54,7 +55,7 @@ context('Verify Gated Asset page', () => {
         cy.get('#field8-error').should('be.visible').should('have.text','This field is required.')
       })
 
-      it.only('Verify Gated asset being displayed on successful form Submission', function() {
+      it('Verify Gated asset being displayed on successful form Submission', function() {
       
       cy.contains('Watch Video').first().click()
       cy.url().should('contains', '/insights')

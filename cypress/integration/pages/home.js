@@ -29,6 +29,11 @@ class Home_Page{
     privacyFooter(){
         return cy.get('.cmp-footer__bottom-bar')
     }
+
+    newsLetter(){
+        return cy.get('.cmp-newsletter-signup__input > input')
+    }
+
     mobileMenu(){
         return cy.get('.cmp-header__nav-open > .fas')
     }

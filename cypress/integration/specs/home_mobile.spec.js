@@ -15,6 +15,7 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
   
     cy.ProMax11()
     cy.HomePage()
+    cy.AcceptCookie()
     cy.fixture('example').then((search)=>{
       data = search
       //cy.viewport(data.iPhoneProMax11)
@@ -93,6 +94,17 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
     //cy.get('.cmp-footer__copyright-text')
       HomePage.privacyFooter().should('include.text',"© 2020 Change Healthcare")
      
+  })
+
+  it('Verify  Newsletter  field being displayed', function(){
+    HomePage.newsLetter().should('be.visible').type('test@changehealthcare.com').should('have.value','test@changehealthcare.com')
+    cy.contains('Subscribe').click()
+    cy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare')
+    cy.get('.cmp-newsletter-signup__subscribed').should('be.visible')
+      .contains('Thank you for signing up!')
+    cy.get('.btn-close').click()
+    HomePage.newsLetter().should('not.be.visible')
+
   })
 
 })

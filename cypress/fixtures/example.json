@@ -2,9 +2,14 @@
   "fname": "Anowar",
   "lname": "Test",
   "email": "test@changehealthcare.com",
-  "body": "This is a test of eloqua form!",
+  "body": "This is a test of eloqua form. Please ignore!",
   "searchText": "Health",
   "company": "Change Healthcare",
   "orgtype": "Software Vendor",
+  "partnerInterest": "Technology",
+  "JobFunct": "Other",
+  "solInterest" : "Quality Analytics",
+  "phone": "312-322-3022",
+  "addr": "100 park dr",
   "state": "IL"
 }

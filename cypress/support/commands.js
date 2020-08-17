@@ -14,14 +14,12 @@ import HomePage from "../integration/pages/home"
 Cypress.Commands.add("HomePage", () => { 
     cy.visit('/')
     cy.title().should('eq','Healthcare Technology & Business Solutions Company | Change Healthcare')
-    HomePage.acceptCookie().should('be.visible').click()
-
+    //HomePage.acceptCookie().should('be.visible').click()
  })
 //setting viewport for iPhone Pro max 11 
  Cypress.Commands.add("ProMax11", () => { 
     cy.viewport(414,896)
-
- })
+   })
 
  Cypress.Commands.add('iframe', () => {
    cy.get('.cmp-header__search-toggle').should('be.visible').click()
@@ -30,3 +28,29 @@ Cypress.Commands.add("HomePage", () => {
        return cy.wrap($body)
      })
 })
+
+Cypress.Commands.add("VisitPage", (path,title) => { 
+   cy.visit('/')
+   cy.title().should('include',title)
+   //HomePage.acceptCookie().should('be.visible').click()
+})
+
+Cypress.Commands.add("elmExits", () => { 
+   cy.get("body").then($body => {
+   if ($body.find(HomePage.acceptCookie()).length > 0) {   //evaluates as true
+      cy.get('#onetrust-accept-btn-handler').click()
+   }
+})
+})
+
+//
+Cypress.Commands.add("AcceptCookie", () => { 
+   HomePage.acceptCookie().then(($btn) => {
+      //if ($btn.hasClass) {
+      if (cy.url('eq','https://www.changehealthcare.com/')) {
+         $btn.click()
+      } else {
+        cy.log('Cookie Doesnt exisit')
+      }
+    })
+   })
