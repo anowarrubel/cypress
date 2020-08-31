@@ -47,7 +47,7 @@ Cypress.Commands.add("elmExits", () => {
 Cypress.Commands.add("AcceptCookie", () => { 
    HomePage.acceptCookie().then(($btn) => {
       //if ($btn.hasClass) {
-      if (cy.url('eq','https://www.changehealthcare.com/')) {
+      if (cy.url().should('eq','https://www.changehealthcare.com/')) {
          $btn.click()
       } else {
         cy.log('Cookie Doesnt exisit')
