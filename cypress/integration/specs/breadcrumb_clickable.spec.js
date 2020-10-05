@@ -45,13 +45,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     
 })
 
-it('Verify Breadcrumb on Contact page is clickable', () =>{
+it('Verify Breadcrumb on a Leadership is clickable', () =>{
   
-  //mainNav.contains('Contact').trigger('mouseover')
-
-  //cy.get('.cmp-header__nav-list-link').contains('Solutions').trigger('mouseover')
-  HomePage.mainNav().contains('Contact').click()
-    cy.url().should('contains','/contact')
+  cy.get(".cmp-header__nav-dropdown").first().invoke('show')
+  cy.contains('Leadership Team').click({force: true})
+  cy.url().should('contains','/leadership')
+  cy.get('span.cmp-leadership-list__leader-overlay').first().contains('Learn More').click({ force: true })
+  cy.get('.cmp-leadership__img > img').should('be.visible')
+  cy.get('.cmp-leadership__name').should('be.visible').should('have.text', 'Neil de Crescenzo')
+  cy.get('.cmp-leadership__title').should('be.visible').should('have.text', 'President and Chief Executive Officer')
+  cy.get('.cmp-leadership__bio').should('be.visible')
   cy.get('.cmp-breadcrumb__list').children().contains('Contact Us').should('not.have.attr','href')
   cy.get('.cmp-breadcrumb__list').children().contains('Home').should('have.attr','href')
   cy.get('.cmp-breadcrumb__list').contains('Home').click()  

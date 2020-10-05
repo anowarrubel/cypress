@@ -13,7 +13,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       cy.AcceptCookie()
     })
 
-    it('Verify Accordion on Career Page', () =>{
+    it.only('Verify Accordion on Career Page', () =>{
       cy.contains('Join Our Team').click()
       cy.url().should('include', '/careers')
       cy.title().should('eq','Healthcare Technology Jobs | Careers | Change Healthcare')
@@ -24,7 +24,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
     })
 
-    it.only('Verify accordion on Payment accuracy page', () =>{
+    it('Verify accordion on Payment accuracy page', () =>{
       
        cy.contains('Solutions').click()
        //cy.url().should('contains','enrollment-services')

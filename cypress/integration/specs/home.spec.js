@@ -11,7 +11,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 context('Verify Home page', () => {
   beforeEach(() => {
     cy.HomePage()
-    cy.AcceptCookie()
+    //cy.AcceptCookie()
+    cy.elmExits()
     cy.fixture('example').then(function(datay){
       this.data=datay
     })

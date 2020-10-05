@@ -13,7 +13,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       cy.AcceptCookie()
     })
 
-    it('Verify "Load More" feature on Insigh Page', () =>{
+    it('Verify "Load More" feature on Insight Page', () =>{
       cy.contains('Insight').click()
       cy.url().should('include','/insigh')
       cy.title().should('eq', 'Healthcare Industry Insights | Healthcare IT Insights | Change Healthcare')
@@ -24,7 +24,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     })
 
     it('Verify "Load More" feature on Newsroom Page', () =>{
-      cy.get('footer').scrollIntoView().contains('Newsroom').click()
+      cy.get(".cmp-header__nav-dropdown").first().invoke('show')
+      cy.contains('Newsroom').click({force: true})
       cy.url().should('include','newsroom')
       cy.title().should('eq', 'Recent News & Press Releases | Press Room | Change Healthcare')
       cy.contains('In The News').click()
@@ -36,7 +37,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     })
 
     it('Verify "Load More" feature on Newsroom Page', () =>{
-      cy.get('footer').scrollIntoView().contains('Newsroom').click()
+      cy.get(".cmp-header__nav-dropdown").first().invoke('show')
+      cy.contains('Newsroom').click({force: true})
       cy.url().should('include','newsroom')
       cy.title().should('eq', 'Recent News & Press Releases | Press Room | Change Healthcare')
       cy.contains('In The News').click()
@@ -48,7 +50,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     })
 
     it('Verify "Load More" feature on Podcasts Page', () =>{
-      cy.get('footer').scrollIntoView().contains('Newsroom').click()
+      cy.get(".cmp-header__nav-dropdown").first().invoke('show')
+      cy.contains('Newsroom').click({force: true})
       cy.url().should('include','newsroom')
       cy.title().should('eq', 'Recent News & Press Releases | Press Room | Change Healthcare')
       cy.contains('Podcasts').click()

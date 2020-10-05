@@ -12,6 +12,15 @@ describe('Verify Search Header API is Enabled', () => {
         })
     })
 
+    it.only('Eloqua blind subscription', () => {
+        cy.request('/bin/changehealth/elq-contacts?email=test@test.com').then((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+            expect(response.body).to.include('subscribed')
+            //expect(response.body.data).to.have.length(24)
+        })
+    })
+
     it('POST - create', () => {
         const item = {"name":"test","salary":"123","age":"23"}
         cy.request('POST', '/create', item)
