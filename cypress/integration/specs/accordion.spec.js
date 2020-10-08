@@ -10,7 +10,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     
     beforeEach(() => {
       cy.HomePage()
-      cy.AcceptCookie()
+      //cy.AcceptCookie()
     })
 
     it.only('Verify Accordion on Career Page', () =>{
