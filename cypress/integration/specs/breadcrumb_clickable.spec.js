@@ -55,7 +55,7 @@ it('Verify Breadcrumb on a Leadership is clickable', () =>{
   cy.get('.cmp-leadership__name').should('be.visible').should('have.text', 'Neil de Crescenzo')
   cy.get('.cmp-leadership__title').should('be.visible').should('have.text', 'President and Chief Executive Officer')
   cy.get('.cmp-leadership__bio').should('be.visible')
-  cy.get('.cmp-breadcrumb__list').children().contains('Contact Us').should('not.have.attr','href')
+  cy.get('.cmp-breadcrumb__list').children().contains('Neil de Crescenzo').should('not.have.attr','href')
   cy.get('.cmp-breadcrumb__list').children().contains('Home').should('have.attr','href')
   cy.get('.cmp-breadcrumb__list').contains('Home').click()  
   cy.title().should('eq','Healthcare Technology & Business Solutions Company | Change Healthcare')

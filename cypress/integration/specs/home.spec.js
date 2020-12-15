@@ -19,14 +19,16 @@ context('Verify Home page', () => {
 
   })
  
-  it('Verify Covid19 text', () => {
-    HomePage.covid19().should('be.visible')
+  it('Verify Covid19 link displayed', () => {
+    //HomePage.covid19().should('be.visible')
+    HomePage.utilityNav().children().contains('COVID-19').should('be.visible')
   })
 
   it('Verify Utility nav being displayed', () => {
     
     HomePage.utilityNav().should('be.visible')
     HomePage.utilityNav().children().contains('Support').should('be.visible')
+    
   })
 
   it('Verify onclick Country icon displays other options', () =>{
@@ -88,7 +90,7 @@ context('Verify Home page', () => {
     cy.get('.cmp-newsletter-signup__subscribed').should('be.visible')
       .contains('Thank you for signing up!')
     cy.get('.btn-close').click()
-    HomePage.newsLetter().should('not.be.visible')
+    //HomePage.newsLetter().should('not.be.visible')
 
   })
 
