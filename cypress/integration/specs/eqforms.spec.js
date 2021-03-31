@@ -38,6 +38,7 @@ context('Verify Eloqua forms', () => {
         cy.get('.elq-form').find('#field15').select(this.testdata.state)
         cy.get('.elq-form').contains('Comments/How can we help?').type(this.testdata.body)
         cy.get('.elq-form').contains('Submit').click()
+        cy.wait(7000)
         cy.get('h1').should('have.text', 'Thank You')
         cy.url().should('include','/contact/sales/thank-you')
         cy.title().should('include','| Change Healthcare')
@@ -161,6 +162,7 @@ context('Verify Eloqua forms', () => {
       cy.server()
       cy.route('POST', '/e/f2').as('post')
       cy.get("[value='Submit']").click()
+      cy.wait(5000)
       cy.get('h1').should('be.visible')
       cy.wait('@post').its('status').should('eq', 200)
       cy.get('@post').should((xhr) =>{
