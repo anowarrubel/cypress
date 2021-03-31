@@ -27,7 +27,7 @@ context('Verify PageView Event is Fired', () => {
         })
     })
 
-    it.only('Verify EPC Data Attribute', function(){
+    it('Verify EPC Data Attribute', function(){
         cy.visit('/insights/how-apis-promote-healthcare-innovation')
         cy.url().should('contains', '/insights')
       cy.title().should('contains','Change Healthcare')

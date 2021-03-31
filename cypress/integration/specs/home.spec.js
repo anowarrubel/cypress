@@ -11,7 +11,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 context('Verify Home page', () => {
   beforeEach(() => {
     cy.HomePage()
-    //cy.AcceptCookie()
+    cy.AcceptCookie()
     cy.elmExits()
     cy.fixture('example').then(function(datay){
       this.data=datay
@@ -77,14 +77,16 @@ context('Verify Home page', () => {
     
   })
 
-  it('Verify copyright text "© 2020 Change Healthcare" being displayed', () =>{
+  it('Verify copyright text "© 2021 Change Healthcare" being displayed', () =>{
     //cy.get('.cmp-footer__copyright-text')
-      HomePage.privacyFooter().should('include.text',"© 2020 Change Healthcare")
+      HomePage.privacyFooter().should('include.text',"© 2021 Change Healthcare")
      
   })
 
   it('Verify  Newsletter  field being displayed', function(){
-    HomePage.newsLetter().should('be.visible').type('test@changehealthcare.com').should('have.value','test@changehealthcare.com')
+    cy.wait(3000)
+    HomePage.newsLetter().should('be.visible').type('test@test.com')
+      .should('have.value','test@test.com')
     cy.contains('Subscribe').click()
     cy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare')
     cy.get('.cmp-newsletter-signup__subscribed').should('be.visible')

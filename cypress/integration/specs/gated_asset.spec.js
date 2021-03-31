@@ -18,10 +18,11 @@ context('Verify Gated Asset page', () => {
     cy.title().should('eq','Healthcare Industry Insights | Healthcare IT Insights | Change Healthcare')
     cy.url().should('contains','/insights')
     cy.fixture("example.json").as("testdata")
-    cy.contains('Watch Video').first().click()
+    cy.contains('Future of Risk Analytics').click()
+     
     cy.url().should('contains', '/insights')
     cy.title().should('contains','Change Healthcare')
-    cy.wait(5000)
+    cy.wait(7000)
     
     })
 
@@ -65,30 +66,28 @@ context('Verify Gated Asset page', () => {
       cy.wait('@post').its('status').should('eq', 200)
       cy.get('@post').should((xhr) =>{
         expect(xhr.requestBody).to.include('elqFormName=ContactUsFormGatedAsset')
-        expect(xhr.requestBody).to.include('firstName=Test&lastName=Test&emailAddress=test%40changehealthcare.com')
+        expect(xhr.requestBody).to.include('firstName=Test&lastName=Test&emailAddress=test%40test.com')
         expect(xhr.requestBody).to.include(this.testdata.fname)
         expect(xhr.requestBody).to.include('company=Change+Healthcare&organizationType1=Software+Vendor')
-        expect(xhr.requestBody).to.include('stateProv=IL&SFDC_Instance_Id=BPS')
+        expect(xhr.requestBody).to.include('stateProv=IL&SFDC_Instance_Id=CHC')
         expect(xhr.requestBody).to.include(this.testdata.state)
         expect(xhr.requestBody).to.include('subscribe=on')
         expect(xhr.requestHeaders).to.have.property('Content-Type')
 
       })
       cy.get('.cmp-asset-embed__modal-inner-contents').should('not.be.visible')
-    })
+      })
 
-    it('Verify EPC Data Attribute', function(){
+    it.only('Verify EPC Data Attribute', function(){
       cy.location('pathname').then(($patht) =>{
         const txt=$patht
         cy.request(txt).its('body').as('respt')
-        cy.get('@respt').should('include','<div data-epc="true" data-key="SFDC_Instance_Id" data-value="BPS"></div>')
-          .should('include','<div data-epc="true" data-key="SFDC_Instance_Id" data-value="BPS"></div>')
+        cy.get('@respt').should('include','<div data-epc="true" data-key="SFDC_Instance_Id" data-value="CHC"></div>')
           .should('include', 'cmp-eloqua-form-wrapper')
           .should('include','<div data-epc="true" data-key="productid" data-value=')
-          .should('include', '<div data-epc="true" data-key="HighLevelMarketSegment" data-value="Providers"></div>')
-          .should('include', '<div data-epc="true" data-key="WebSolutionArea" data-value="Revenue Cycle Management"></div>')
-          .should('include','<div data-epc="true" data-key="ModuleName" data-value="Patient Access Center Services"></div>')
-          .should('include','<div data-epc="true" data-key="MarketingSubSegment"></div>')
+          .should('include', '<div data-epc="true" data-key="HighLevelMarketSegment" data-value="Payer"></div>')
+          .should('include', '<div data-epc="true" data-key="SolutionArea" data-value="Risk Adjustment Analytics"></div>')
+          .should('include','<div data-epc="true" data-key="MarketingSubSegment" data-value="Payers"></div>')
      })
         })
         

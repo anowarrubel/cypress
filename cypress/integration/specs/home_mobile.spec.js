@@ -23,7 +23,8 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
     
   })
 
-  it.skip('Verify Covid19 link displayed', () => {
+  it('Verify Covid19 link displayed', () => {
+    HomePage.mobileMenu().should('be.visible').click()
     //HomePage.covid19().should('be.visible')
     HomePage.utilityNav().children().contains('COVID-19').should('be.visible')
   })
@@ -91,14 +92,17 @@ context('Verify CHC Home page on iPhone Pro Max 11', () => {
     
   })
 
-  it('Verify copyright text "© 2020 Change Healthcare" being displayed', () =>{
+  it('Verify copyright text "© 2021 Change Healthcare" being displayed', () =>{
     //cy.get('.cmp-footer__copyright-text')
-      HomePage.privacyFooter().should('include.text',"© 2020 Change Healthcare")
+      HomePage.privacyFooter().should('include.text',"© 2021 Change Healthcare")
      
   })
 
   it('Verify  Newsletter  field being displayed', function(){
-    HomePage.newsLetter().should('be.visible').type('test@changehealthcare.com').should('have.value','test@changehealthcare.com')
+    cy.wait(3000)
+    HomePage.newsLetter().should('be.visible')
+    .type('test@changehealthcare.com')
+    .should('have.value','test@changehealthcare.com')
     cy.contains('Subscribe').click()
     cy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare')
     cy.get('.cmp-newsletter-signup__subscribed').should('be.visible')
