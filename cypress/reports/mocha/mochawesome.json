@@ -1,23 +1,130 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
+    "suites": 1,
+    "tests": 3,
     "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-08-06T19:09:33.782Z",
-    "end": "2020-08-06T19:09:33.784Z",
-    "duration": 2,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "failures": 3,
+    "start": "2022-11-10T06:27:21.419Z",
+    "end": "2022-11-10T06:27:42.265Z",
+    "duration": 20846,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "479c7b13-2695-4d3b-ad8c-b26ed1c631f3",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/find_client_advisor.spec.js",
+      "file": "cypress/e2e/specs/find_client_advisor.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "302028e7-1dfe-4d18-ac00-446aaf893953",
+          "title": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Find a Mortgage Loan officer page is displayed",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Mortgage Loan officer page is displayed",
+              "timedOut": null,
+              "duration": 9479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#main-content').within(() => {\n  cy.get('h1.coh-heading').contains('Connect With One Of Our Experienced Client Advisors').should('be.visible');\n  cy.contains('SEARCH BY LOCATION OR NAME');\n  _find.default.location().should('be.visible').contains('Select Location');\n  _find.default.associate().should('be.visible').should('be.visible').contains('Select Advisor');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_client_advisor.spec.js:291:32)",
+                "diff": null
+              },
+              "uuid": "ecd0fa2c-ec8b-4bff-98d4-21b197103554",
+              "parentUUID": "302028e7-1dfe-4d18-ac00-446aaf893953",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Advisor By Location Search",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Advisor By Location Search",
+              "timedOut": null,
+              "duration": 5662,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_find.default.location().select('Bartlesville, OK', {\n  force: true\n});\ncy.contains('h3', \"Hannah J. Bode\").should('be.visible');\n_find.default.privateBankerList().first().within(() => {\n  cy.contains('Vice President, Arvest Bank').should('be.visible');\n  cy.contains('(918) 337-4301');\n  cy.contains('a', 'hbode@arvest.com');\n  cy.contains('Oklahoma Insurance License # 40087522');\n  cy.contains('SCHEDULE AN APPOINTMENT').click();\n  cy.title().should('be.eq', \"Service\");\n  cy.go('back');\n  cy.title().should('be.eq', 'Find a Client Advisor | Arvest Bank');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Find_Officer.location (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_client_advisor.spec.js:124:15)\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_client_advisor.spec.js:297:19)",
+                "diff": null
+              },
+              "uuid": "65acdb95-6ec2-4e60-99f3-1ee8d78157a2",
+              "parentUUID": "302028e7-1dfe-4d18-ac00-446aaf893953",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Mortgage Loan officer By Name Search",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Mortgage Loan officer By Name Search",
+              "timedOut": null,
+              "duration": 5603,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_find.default.location().should('be.visible');\n_find.default.associate().select('Andy Goos', {\n  force: true\n});\ncy.contains('h3', \"Andy Goos\").should('be.visible');\n_find.default.privateBankerList().first().contains('Client Advisor').should('be.visible');\n_find.default.privateBankerList().contains('(913) 948-2176');\n_find.default.privateBankerList().contains('a', 'agoos@arvest.com');\n_find.default.privateBankerList().contains('Missouri Insurance License # 8226548');\ncy.contains(\"SCHEDULE AN APPOINTMENT\").click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_client_advisor.spec.js:315:30)",
+                "diff": null
+              },
+              "uuid": "61868a04-fac8-4bba-af4b-142a5a272204",
+              "parentUUID": "302028e7-1dfe-4d18-ac00-446aaf893953",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ecd0fa2c-ec8b-4bff-98d4-21b197103554",
+            "65acdb95-6ec2-4e60-99f3-1ee8d78157a2",
+            "61868a04-fac8-4bba-af4b-142a5a272204"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20744,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
@@ -33,7 +140,7 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.1.1"
+      "version": "6.3.1"
     },
     "marge": {
       "options": {
@@ -44,7 +151,7 @@
         "html": false,
         "json": true
       },
-      "version": "5.1.0"
+      "version": "5.2.0"
     }
   }
 }

@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 4,
-    "passes": 4,
+    "tests": 2,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-08-06T19:09:39.649Z",
-    "end": "2020-08-06T19:10:01.167Z",
-    "duration": 21518,
-    "testsRegistered": 4,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2022-11-10T06:28:06.744Z",
+    "end": "2022-11-10T06:28:21.316Z",
+    "duration": 14572,
+    "testsRegistered": 2,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,106 +18,76 @@
   },
   "results": [
     {
-      "uuid": "718e9606-30e5-409a-bd79-a73e7ae9a63c",
+      "uuid": "fcf54f80-c353-42c8-88a3-b6d403077a34",
       "title": "",
-      "fullFile": "cypress/integration/specs/breadcrumb_clickable.spec.js",
-      "file": "cypress/integration/specs/breadcrumb_clickable.spec.js",
+      "fullFile": "cypress/e2e/specs/find_private_banker.spec.js",
+      "file": "cypress/e2e/specs/find_private_banker.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "c5d88cb9-ccdd-4edb-b425-4a0c31a80413",
-          "title": "Verify Breadcrumb is clickable",
+          "uuid": "279539ee-b83c-4b05-8d46-5ecfe3fce095",
+          "title": "Verify \"FIND Private Banker\" page",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Verify Breadcrumb on About Us page is clickable",
-              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on About Us page is clickable",
+              "title": "Verify Find a Privae Banker page is displayed",
+              "fullTitle": "Verify \"FIND Private Banker\" page Verify Find a Privae Banker page is displayed",
               "timedOut": null,
-              "duration": 10287,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 8853,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "_home[\"default\"].mainNav().contains('About').click();\ncy.title().should('eq', 'About Change Healthcare | Company Overview | Change Healthcare');\ncy.url().should('contains', '/about');\ncy.contains('Home').click();\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');\ncy.url().should('contains', 'healthcare');",
-              "err": {},
-              "uuid": "70fa595c-46ae-4f62-9c15-bde2fb1abc3d",
-              "parentUUID": "c5d88cb9-ccdd-4edb-b425-4a0c31a80413",
+              "code": "cy.get('h1').contains(' Private Banking ').should('be.visible');\ncy.contains('SELECT YOUR LOCATION').should('be.visible');\n_find.default.location().should('be.visible');\ncy.contains('h2', \"SIMPLIFY YOUR LIFE WITH ONE PHONE CALL\").should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_private_banker.spec.js:290:30)",
+                "diff": null
+              },
+              "uuid": "36c957f9-df8c-4d9f-925c-26a13e9f7d62",
+              "parentUUID": "279539ee-b83c-4b05-8d46-5ecfe3fce095",
               "isHook": false,
               "skipped": false
             },
             {
-              "title": "Verify Breadcrumb on Insights page is clickable",
-              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on Insights page is clickable",
+              "title": "Verify Find a Advisor By Location Search",
+              "fullTitle": "Verify \"FIND Private Banker\" page Verify Find a Advisor By Location Search",
               "timedOut": null,
-              "duration": 3270,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 5640,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "_home[\"default\"].mainNav().contains('Insights').click();\ncy.title().should('eq', 'Healthcare Industry Insights | Healthcare IT Insights | Change Healthcare');\ncy.url().should('contains', '/insights');\ncy.get('.cmp-breadcrumb__list').children().eq(1).should('not.have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').children().contains('Home').should('have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').contains('Home').click();\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');\ncy.url().should('contains', 'healthcare');",
-              "err": {},
-              "uuid": "94ff9832-865a-4424-a092-1b481d52b1f8",
-              "parentUUID": "c5d88cb9-ccdd-4edb-b425-4a0c31a80413",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify Breadcrumb on Solution page is clickable",
-              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on Solution page is clickable",
-              "timedOut": null,
-              "duration": 3610,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "_home[\"default\"].mainNav().contains('Solutions').trigger('mouseover');\ncy.get('.cmp-header__nav-dropdown-toggle').eq(2).click({\n  force: true\n});\ncy.get(':nth-child(2) > .cmp-header__nav-dropdown-container > .cmp-header__nav-dropdown').contains('Reduce Costs').click();\ncy.url().should('contains', '/solutions');\ncy.get('.cmp-breadcrumb__list').children().contains('Reduce Costs').should('not.have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').children().contains('Home').should('have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').contains('Home').click();\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');",
-              "err": {},
-              "uuid": "d563c3c6-5a70-43e6-a099-edc01ca63eba",
-              "parentUUID": "c5d88cb9-ccdd-4edb-b425-4a0c31a80413",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify Breadcrumb on Contact page is clickable",
-              "fullTitle": "Verify Breadcrumb is clickable Verify Breadcrumb on Contact page is clickable",
-              "timedOut": null,
-              "duration": 4145,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "//mainNav.contains('Contact').trigger('mouseover')\n//cy.get('.cmp-header__nav-list-link').contains('Solutions').trigger('mouseover')\n_home[\"default\"].mainNav().contains('Contact').click();\ncy.url().should('contains', '/contact');\ncy.get('.cmp-breadcrumb__list').children().contains('Contact Us').should('not.have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').children().contains('Home').should('have.attr', 'href');\ncy.get('.cmp-breadcrumb__list').contains('Home').click();\ncy.title().should('eq', 'Healthcare Technology & Business Solutions Company | Change Healthcare');",
-              "err": {},
-              "uuid": "6f5d9f40-97ef-4ef8-9d83-17a649dc17fe",
-              "parentUUID": "c5d88cb9-ccdd-4edb-b425-4a0c31a80413",
+              "code": "//FindOfficer.location().select('Little Rock, AR')\ncy.get('#edit-location--2').select('Little Rock, AR', {\n  force: true\n}); //cy.get('#edit-submit-private-banker-block--2').click()\ncy.get('.coh-blockquote').scrollIntoView();\ncy.contains('h3', \"Alicia Dewees\").should('be.visible');\n_find.default.privateBankerList().first().contains('Vice President / Private Banking Advisor').should('be.visible');\n_find.default.privateBankerList().contains('(501) 513-4577');\n_find.default.privateBankerList().contains('a', 'adewees@arvest.com');\n_find.default.privateBankerList().contains('69256');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_private_banker.spec.js:296:8)",
+                "diff": null
+              },
+              "uuid": "b2576a71-95ca-4953-af76-03ade10fae5e",
+              "parentUUID": "279539ee-b83c-4b05-8d46-5ecfe3fce095",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "70fa595c-46ae-4f62-9c15-bde2fb1abc3d",
-            "94ff9832-865a-4424-a092-1b481d52b1f8",
-            "d563c3c6-5a70-43e6-a099-edc01ca63eba",
-            "6f5d9f40-97ef-4ef8-9d83-17a649dc17fe"
+          "passes": [],
+          "failures": [
+            "36c957f9-df8c-4d9f-925c-26a13e9f7d62",
+            "b2576a71-95ca-4953-af76-03ade10fae5e"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 21312,
+          "duration": 14493,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -147,7 +117,7 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.1.1"
+      "version": "6.3.1"
     },
     "marge": {
       "options": {
@@ -158,7 +128,7 @@
         "html": false,
         "json": true
       },
-      "version": "5.1.0"
+      "version": "5.2.0"
     }
   }
 }

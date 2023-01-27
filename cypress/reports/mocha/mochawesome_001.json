@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
+    "tests": 3,
     "passes": 1,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-08-06T19:09:36.229Z",
-    "end": "2020-08-06T19:09:37.074Z",
-    "duration": 845,
-    "testsRegistered": 1,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2022-11-10T06:27:46.444Z",
+    "end": "2022-11-10T06:28:02.844Z",
+    "duration": 16400,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,49 +18,96 @@
   },
   "results": [
     {
-      "uuid": "c4a74055-966a-4c1d-b9f3-3ed53570896f",
+      "uuid": "fb2f7f04-a963-4385-901e-69539748d27b",
       "title": "",
-      "fullFile": "cypress/integration/specs/api.spec.js",
-      "file": "cypress/integration/specs/api.spec.js",
+      "fullFile": "cypress/e2e/specs/find_loan_officer.spec.js",
+      "file": "cypress/e2e/specs/find_loan_officer.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "75c72825-a593-4157-a976-838d47331db5",
-          "title": "Verify Search Header API is Enabled",
+          "uuid": "fd05c882-116e-4bb5-903c-c4e260ea8ac7",
+          "title": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Verify Header Search api",
-              "fullTitle": "Verify Search Header API is Enabled Verify Header Search api",
+              "title": "Verify Find a Mortgage Loan officer page is displayed",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Mortgage Loan officer page is displayed",
               "timedOut": null,
-              "duration": 647,
+              "duration": 5200,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.request('/content/changehealth/us/en/search.html/_jcr_content/root/main-par.html').then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.not.be[\"null\"];\n  expect(response.body).to.not.include('start up inprogress');\n  expect(response.body).to.not.have.property('start up inprogress'); //expect(response.body.data).to.have.length(24)\n});",
+              "code": "cy.get('h1').contains(' Find a Mortgage Loan Officer ').should('be.visible');\ncy.contains('SEARCH YOUR LOCATION OR SEARCH BY NAME').should('be.visible');\ncy.contains(\"[role='textbox']\", 'Select Location').should('be.visible');\ncy.contains(\"[role='textbox']\", 'Select Loan Officer').should('be.visible');",
               "err": {},
-              "uuid": "11cf2dd5-d70c-440c-bbdc-900b726ce00b",
-              "parentUUID": "75c72825-a593-4157-a976-838d47331db5",
+              "uuid": "c57a2d01-7e49-4e9d-bb8e-990565c7a0ae",
+              "parentUUID": "fd05c882-116e-4bb5-903c-c4e260ea8ac7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Mortgage Loan officer By Location Search",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Mortgage Loan officer By Location Search",
+              "timedOut": null,
+              "duration": 5459,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#edit-location--2\").select('Internet Lender', {\n  force: true\n});\ncy.contains('h3', \"Alex Simpson\").should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('Mortgage Loan Officer').should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('Internet Lender').should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('(918) 382-2638');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('a', 'asimpson1@arvest.com');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').find('.coh-inline-element').contains('NMLS# 803613');\ncy.contains(\"Visit Alex's Web Page for More Information\").click();\ncy.title().should('be.eq', \"Apply for a mortgage online | Arvest Home Loans - asimpson1\");\ncy.go('back');\ncy.title().should('be.eq', 'Find a Mortgage Loan Officer | Arvest Bank');\ncy.contains('a', 'BEGIN ONLINE APPLICATION').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_loan_officer.spec.js:253:8)",
+                "diff": null
+              },
+              "uuid": "d6e76247-4a07-4cbb-9d13-adc2d0dc1310",
+              "parentUUID": "fd05c882-116e-4bb5-903c-c4e260ea8ac7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Mortgage Loan officer By Name Search",
+              "fullTitle": "Verify \"FIND A MORTGAGE LOAN OFFICER\" page Verify Find a Mortgage Loan officer By Name Search",
+              "timedOut": null,
+              "duration": 5640,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#edit-location--2\").should('be.visible');\ncy.get('#edit-associate--2').select('Alex Simpson', {\n  force: true\n});\ncy.contains('h3', \"Alex Simpson\").should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('Mortgage Loan Officer').should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('Internet Lender').should('be.visible');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('(918) 382-2638');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').contains('a', 'asimpson1@arvest.com');\ncy.get('.coh-column.coh-visible-ps.coh-col-ps-12.coh-visible-xl.coh-col-xl-7').find('.coh-inline-element').contains('NMLS# 803613');\ncy.contains(\"Visit Alex's Web Page for More Information\").click();\ncy.title().should('be.eq', \"Apply for a mortgage online | Arvest Home Loans - asimpson1\");\ncy.go('back');\ncy.title().should('be.eq', 'Find a Mortgage Loan Officer | Arvest Bank');\ncy.contains('a', 'BEGIN ONLINE APPLICATION').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_loan_officer.spec.js:269:33)",
+                "diff": null
+              },
+              "uuid": "75deb596-5878-4e0f-a97b-8b9568f14149",
+              "parentUUID": "fd05c882-116e-4bb5-903c-c4e260ea8ac7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "11cf2dd5-d70c-440c-bbdc-900b726ce00b"
+            "c57a2d01-7e49-4e9d-bb8e-990565c7a0ae"
           ],
-          "failures": [],
+          "failures": [
+            "d6e76247-4a07-4cbb-9d13-adc2d0dc1310",
+            "75deb596-5878-4e0f-a97b-8b9568f14149"
+          ],
           "pending": [],
           "skipped": [],
-          "duration": 647,
+          "duration": 16299,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -90,7 +137,7 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.1.1"
+      "version": "6.3.1"
     },
     "marge": {
       "options": {
@@ -101,7 +148,7 @@
         "html": false,
         "json": true
       },
-      "version": "5.1.0"
+      "version": "5.2.0"
     }
   }
 }

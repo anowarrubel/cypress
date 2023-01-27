@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 3,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-08-06T19:10:05.541Z",
-    "end": "2020-08-06T19:10:19.575Z",
-    "duration": 14034,
-    "testsRegistered": 1,
-    "passPercent": 100,
+    "failures": 3,
+    "start": "2022-11-10T06:28:25.047Z",
+    "end": "2022-11-10T06:28:46.039Z",
+    "duration": 20992,
+    "testsRegistered": 3,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,49 +18,99 @@
   },
   "results": [
     {
-      "uuid": "1c27d780-9f3f-4fe9-bab2-8e0f7e4de9a5",
+      "uuid": "15dded70-51b9-40f0-ba0f-8b41be879668",
       "title": "",
-      "fullFile": "cypress/integration/specs/enrollment.spec.js",
-      "file": "cypress/integration/specs/enrollment.spec.js",
+      "fullFile": "cypress/e2e/specs/find_trusts.spec.js",
+      "file": "cypress/e2e/specs/find_trusts.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "533c18fa-4190-4eef-8127-47c63bd90677",
-          "title": "Verify Enrollment form pages being loaded without redirect",
+          "uuid": "dbfdc5b2-0c4a-47cb-a65a-4e9e6eab7474",
+          "title": "Verify \"FIND Trust & Estate Planning Professional\" page",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Verify Medical Claims Enrollment forms Page",
-              "fullTitle": "Verify Enrollment form pages being loaded without redirect Verify Medical Claims Enrollment forms Page",
+              "title": "Verify Find a Trust & Estate page is displayed",
+              "fullTitle": "Verify \"FIND Trust & Estate Planning Professional\" page Verify Find a Trust & Estate page is displayed",
               "timedOut": null,
-              "duration": 13968,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 8944,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.visit(\"https://support.changehealthcare.com/customer-resources/enrollment-services/medical-hospital-claims-enrollment-forms\"); // cy.url().should('contains','enrollment-services')\n// cy.get('[data-link-type=\"claims enrollment forms\"]').first().click()\n// cy.title().should('eq','Medical amp; Hospital Claims Enrollment Forms | Support')\n// cy.url().should('contains','enrollment-services')",
-              "err": {},
-              "uuid": "3399e6f9-6048-4d58-bd01-74f094a513f4",
-              "parentUUID": "533c18fa-4190-4eef-8127-47c63bd90677",
+              "code": "cy.get('h1').contains(' Find a Trust and Estate Planning Professional ').should('be.visible');\ncy.contains('SEARCH YOUR LOCATION OR NAME').should('be.visible');\n_find.default.location().should('be.visible');\n_find.default.associate().should('be.visible'); //cy.contains('h2',\"SIMPLIFY YOUR LIFE WITH ONE PHONE CALL\").should('be.visible')",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_trusts.spec.js:290:30)",
+                "diff": null
+              },
+              "uuid": "f1a7a10e-c0a8-4956-9db9-efacde4f5844",
+              "parentUUID": "dbfdc5b2-0c4a-47cb-a65a-4e9e6eab7474",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Trust & Estate advisor By Location Search",
+              "fullTitle": "Verify \"FIND Trust & Estate Planning Professional\" page Verify Find a Trust & Estate advisor By Location Search",
+              "timedOut": null,
+              "duration": 5370,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//FindOfficer.location().select('Little Rock, AR')\ncy.get('#edit-location--2').select('Alma, AR', {\n  force: true\n});\ncy.contains('h3', \"Kevin Lacewell CFP® CTFA\").should('be.visible'); //Verify content\n_find.default.privateBankerList().first().within(() => {\n  cy.contains('Vice President, Arvest Bank').should('be.visible');\n  cy.contains('(479) 221-8797');\n  cy.contains('a', 'klacewell@arvest.com');\n  cy.contains('Arkansas Insurance License # 3521806');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_trusts.spec.js:297:8)",
+                "diff": null
+              },
+              "uuid": "e0929a3e-74da-438a-b387-ea602e4a49b5",
+              "parentUUID": "dbfdc5b2-0c4a-47cb-a65a-4e9e6eab7474",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Find a Trust Officer By Name Search",
+              "fullTitle": "Verify \"FIND Trust & Estate Planning Professional\" page Verify Find a Trust Officer By Name Search",
+              "timedOut": null,
+              "duration": 6567,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#edit-location--2\").should('be.visible');\ncy.get('#edit-associate--2').select('Bert Kell', {\n  force: true\n});\ncy.contains('h3', \"Bert Kell\").should('be.visible');\n_find.default.privateBankerList().first().within(() => {\n  cy.contains('Senior Vice President, Arvest Bank').should('be.visible');\n  cy.contains('(479)621-1868');\n  cy.contains('a', 'hkell@arvest.com');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#edit-location--2`, but never found it.\n    at Context.eval (https://www.arvest.com/__cypress/tests?p=cypress/e2e/specs/find_trusts.spec.js:310:33)",
+                "diff": null
+              },
+              "uuid": "6058a87f-ca93-4643-a95e-d1099e2fc212",
+              "parentUUID": "dbfdc5b2-0c4a-47cb-a65a-4e9e6eab7474",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "3399e6f9-6048-4d58-bd01-74f094a513f4"
+          "passes": [],
+          "failures": [
+            "f1a7a10e-c0a8-4956-9db9-efacde4f5844",
+            "e0929a3e-74da-438a-b387-ea602e4a49b5",
+            "6058a87f-ca93-4643-a95e-d1099e2fc212"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13968,
+          "duration": 20881,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -90,7 +140,7 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.1.1"
+      "version": "6.3.1"
     },
     "marge": {
       "options": {
@@ -101,7 +151,7 @@
         "html": false,
         "json": true
       },
-      "version": "5.1.0"
+      "version": "5.2.0"
     }
   }
 }

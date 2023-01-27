@@ -2,47 +2,31 @@
 This is a automation test framework buil with cypress. Details: https://www.cypress.io/
 
 ## How to install Cypress using npm?
-1. Create a project folder
-2. cd /your/project/folder
-3. Run "npm init" and follow the screen prompt to create package.json 
-3. Run "npm install cypress --save-dev"
+1. Checkout this codebase from a repo
+2. cd into the repo to cypress folder
+3. Run "npm install"
 
-## Optional: 
-
-Install Mocha 
-1. cd /your/project/folder
-2. Run "npm install mocha --save-dev"
-
-Install cypress-multi-reporter 
-1. cd /your/project/folder
-2. Run "npm install cypress-multi-reporters --save-dev"
-
-Install Mochawesome for html reporting
-1. cd /your/project/folder
-2. Run "npm install --save-dev mochawesome"
-
-Install Mochawesome-merge 
-1. cd /your/project/folder
-2. Run "npm install mochawesome-merge --save-dev"
-
-Install Mochawesome-report-generator 
-1. cd /your/project/folder
-2. Run "npm install mochawesome-report-generator --save-dev"
 
 ## How to Open Cypress?
 
-1. cd /your/project/folder 
-2. Run "./node_modules/.bin/cypress open"
-3. Or run "npx cypress open" (If you have npm >v5.2)
+1. Go to cypress folder
+2. Run "npx cypress open"
+3. Select "End to End" testing
+4. Click on a test to execute
 
 
-## How to run tests?
-1. cd to root folder
+## How to run tests using the command line?
+1. cd to cypress folder
 2. To run a particular test, run "npx cypress run --spec 'cypress/integration/test_name.spec.js' "
 3. To run all tests in a folder, run "npx cypress run --spec 'cypress/integration/**.spec.js' "
 4. To run a test with headless browser, run "./node_modules/.bin/cypress run --headless --spec "cypress/integration/test_name.spec.js" (it will use default headless elctron browser)
 5. To run a test with chrome headles browser, run "./node_modules/.bin/cypress run -b chrome --headless --spec 'cypress/integration/**.spec.js' "
 6. To upload test result to the Cypress Dashboard, run "./node_modules/.bin/cypress run --spec 'cypress/integration/home.spec.js'  --record --key ab5bc05f-ceaf-4bb6-ab4d-af30c08950ee"
+
+## CI/CD integration/Regression testing: Run these commands from the terminal command line or CI/CD command
+1. To run tests on dev, run "npm run test:dev" 
+2. To run tests on stage, run "npm run test:stage"
+3. To run tests on prod, run "npm run test:prod"
 
 ## Where to create tests?
 Tests are created inside "specs" folder: "/root_folder/cypress/integration/specs"
