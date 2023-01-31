@@ -56,7 +56,7 @@ class Home_Page{
         return cy.get('.coh-row-inner > .coh-social-media-menu')
     }
     privacyLinks(){
-        return cy.get('.coh-ce-cpt_site_footer_menu-c63807fe')
+        return cy.get('.coh-ce-cpt_site_footer_menu-ed9919b9')
     }
     mobileBranding(){
         return cy.get('.site-branding')
